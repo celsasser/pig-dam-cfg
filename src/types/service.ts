@@ -7,30 +7,32 @@
 import {ServerConfiguration} from "./server";
 
 /**
+ * Union of all of our service names
+ */
+export type ServiceName = "factory"|"mongo"|"search"|"server";
+
+/**
  * Properties shared by all modules
  */
-export interface ModuleConfiguration {
+export interface ServiceConfiguration {
 	name: string;
-	server: {
-		debug: ServerConfiguration;
-		docker: ServerConfiguration;
-	};
+	server: ServerConfiguration;
 }
 
-export interface MongoModuleConfiguration extends ModuleConfiguration {
+export interface MongoServiceConfiguration extends ServiceConfiguration {
 	database: {
 		"urn:db:doc:pig": {
 			name: string;
 		}
-	}
+	};
 }
 
-export interface SearchModuleConfiguration extends ModuleConfiguration {
+export interface SearchServiceConfiguration extends ServiceConfiguration {
 	indices: {
 		metadata: {
 			id: string;
 			// todo: what are these types?
 			type: string;
 		}
-	}
+	};
 }

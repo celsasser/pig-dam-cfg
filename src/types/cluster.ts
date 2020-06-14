@@ -4,16 +4,41 @@
  * @license MIT (see project's LICENSE file)
  */
 
-
+import {Severity} from "pig-dam-core/src/types/index";
 import {
-	ModuleConfiguration,
-	SearchModuleConfiguration,
-	MongoModuleConfiguration
-} from "./module";
+	MongoServiceConfiguration,
+	SearchServiceConfiguration,
+	ServiceConfiguration
+} from "./service";
 
+/**
+ * The entire cluster's deployment configuration
+ */
 export interface ClusterConfiguration {
-	factory: ModuleConfiguration;
-	mongo: MongoModuleConfiguration;
-	search: SearchModuleConfiguration;
-	server: ModuleConfiguration;
+	factory: ServiceConfiguration;
+	mongo: MongoServiceConfiguration;
+	search: SearchServiceConfiguration;
+	server: ServiceConfiguration;
+}
+
+/**
+ * Everything we could want to know about the cluster
+ */
+export interface ClusterManifest {
+	cluster: ClusterConfiguration;
+	environment: {
+		desc?: string;
+		name: string;
+	};
+	settings: ClusterSettings;
+}
+
+export interface ClusterSettings {
+	debug: {
+		enabled: boolean;
+		verbose: boolean;
+	};
+	log: {
+		level: Severity;
+	};
 }

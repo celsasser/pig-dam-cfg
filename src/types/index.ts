@@ -5,6 +5,5 @@
  */
 
 export * from "./cluster";
-export * from "./manifest";
-export * from "./module";
 export * from "./server";
+export * from "./service";

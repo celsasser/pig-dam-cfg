@@ -3,21 +3,28 @@
  * Time: 11:16 PM
  * @license MIT (see project's LICENSE file)
  */
-import {loadManifest} from "./manifest";
-import {ClusterConfiguration, Manifest, PigDamServer, ServerConfiguration} from "./types";
+
+import {getClusterManifest} from "./manifest";
+import {
+	ClusterConfiguration,
+	ClusterManifest,
+	ServiceConfiguration,
+	ServiceName
+} from "./types";
+
 
 /**
  * Gets the entire cluster's configuration
  * @throws {Error}
  */
-export function getClusterConfiguration(manifest: Manifest = loadManifest()): ClusterConfiguration {
+export function getClusterConfiguration(manifest: ClusterManifest = getClusterManifest()): ClusterConfiguration {
 	return manifest.cluster;
 }
 
 /**
- * Gets a server's configuration within the cluster
+ * Loads the configuration of the specified service
  * @throws {Error}
  */
-export function getClusterServerConfiguration(server: PigDamServer, manifest: Manifest = loadManifest()): ServerConfiguration {
-	return manifest[server];
+export function getServiceConfiguration<T extends ServiceConfiguration>(service: ServiceName, cluster: ClusterConfiguration = getClusterConfiguration()): T {
+	return cluster[service] as T;
 }

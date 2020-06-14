@@ -6,4 +6,5 @@
 
 export * from "./cluster";
 export * from "./manifest";
+export * from "./path";
 export * from "./types";

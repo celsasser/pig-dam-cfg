@@ -1,0 +1,19 @@
+{
+	"cluster": "./cluster.json",
+	"deployment": {
+		"factory": "debug"
+	},
+	"environment": {
+		"desc": "local development",
+		"name": "local"
+	},
+	"settings": {
+		"debug": {
+			"enabled": true,
+			"verbose": true
+		},
+		"log": {
+			"level": "debug"
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"cluster": {
+		"factory": {
+			"host": "localhost",
+			"port": 8020
+		},
+		"mongo": {
+			"host": "pig.dam.mongo",
+			"port": 27017
+		},
+		"search": {
+			"host": "pig.dam.search",
+			"port": 9200
+		},
+		"server": {
+			"host": "pig.dam.server",
+			"port": 8010
+		}
+	},
+	"environment": {
+		"desc": "local development",
+		"name": "local"
+	},
+	"settings": {
+		"debug": {
+			"enabled": true,
+			"verbose": true
+		},
+		"log": {
+			"level": "debug"
+		}
+	}
+}

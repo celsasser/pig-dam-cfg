@@ -1,0 +1,65 @@
+{
+	"factory": {
+		"name": "factory",
+		"server": {
+			"debug": {
+				"host": "localhost",
+				"port": 8020
+			},
+			"docker": {
+				"host": "pig.dam.factory",
+				"port": 8020
+			}
+		}
+	},
+	"mongo": {
+		"database": {
+			"urn:db:doc:pig": {
+				"name": "pig-local"
+			}
+		},
+		"name": "mongo",
+		"server": {
+			"debug": {
+				"host": "localhost",
+				"port": 27017
+			},
+			"docker": {
+				"host": "pig.dam.mongo",
+				"port": 27017
+			}
+		}
+	},
+	"search": {
+		"indices": {
+			"metadata": {
+				"id": "<project.id>",
+				"type": "metadata"
+			}
+		},
+		"name": "search",
+		"server": {
+			"debug": {
+				"host": "localhost",
+				"port": 9200
+			},
+			"docker": {
+				"host": "pig.dam.search",
+				"port": 9200
+			}
+		}
+	},
+	"server": {
+		"name": "server",
+		"server": {
+			"debug": {
+				"host": "localhost",
+				"port": 8010
+			},
+			"docker": {
+				"host": "pig.dam.server",
+				"port": 8010
+			}
+		}
+	}
+}
