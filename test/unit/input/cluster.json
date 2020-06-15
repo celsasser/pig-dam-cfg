@@ -1,5 +1,6 @@
 {
 	"factory": {
+		"id": "urn:dam:service:factory",
 		"name": "factory",
 		"server": {
 			"debug": {
@@ -13,6 +14,7 @@
 		}
 	},
 	"mongo": {
+		"id": "urn:dam:service:mongo",
 		"database": {
 			"urn:db:doc:pig": {
 				"name": "pig-local"
@@ -31,6 +33,7 @@
 		}
 	},
 	"search": {
+		"id": "urn:dam:service:search",
 		"indices": {
 			"metadata": {
 				"id": "<project.id>",
@@ -50,6 +53,7 @@
 		}
 	},
 	"server": {
+		"id": "urn:dam:service:server",
 		"name": "server",
 		"server": {
 			"debug": {

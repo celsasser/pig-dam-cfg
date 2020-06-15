@@ -22,7 +22,7 @@ describe("cluster", function() {
 	describe("getServiceConfiguration", function() {
 		it("should properly get the cluster's service definition", function() {
 			const manifest = getClusterManifest(`${__dirname}/input/manifest.reference.json`);
-			const service = getServiceConfiguration("factory", manifest);
+			const service = getServiceConfiguration("factory", manifest.cluster);
 			expect(service).toEqual(manifest.cluster.factory);
 		});
 	});

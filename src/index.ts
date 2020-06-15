@@ -5,6 +5,8 @@
  */
 
 export * from "./cluster";
+export * from "./logger";
 export * from "./manifest";
 export * from "./path";
+export * from "./service";
 export * from "./types";

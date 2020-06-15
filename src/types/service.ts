@@ -15,6 +15,7 @@ export type ServiceName = "factory"|"mongo"|"search"|"server";
  * Properties shared by all modules
  */
 export interface ServiceConfiguration {
+	id: string;
 	name: string;
 	server: ServerConfiguration;
 }

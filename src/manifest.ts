@@ -12,8 +12,7 @@ import {
 	ClusterConfiguration,
 	ClusterManifest,
 	ClusterSettings,
-	ServerConfiguration,
-	ServiceName
+	ServerConfiguration
 } from "./types";
 
 /**
@@ -120,17 +119,16 @@ export function loadManifestConfiguration(path: string): InternalClusterManifest
 }
 
 /**
- * Transforms our internal representation into one that reflects the current deployment
+ * Transforms our internal representation into one that reflects the current deployment. Which means:
+ * - we flatten the server structure so that each service points to its state as per the `deployment` spec.
  */
 function normalizeClusterConfiguration(configuration: InternalClusterConfiguration, deployment?: InternalClusterDeployment): ClusterConfiguration {
 	configuration = _.cloneDeep(configuration);
 	_.forEach(configuration, (value: any, key: string) => {
 		if("server" in value) {
-			if(_.get(deployment, key) === "debug") {
-				configuration[key as ServiceName] = value.server.debug;
-			} else {
-				configuration[key as ServiceName] = value.server.docker;
-			}
+			value.server = (_.get(deployment, key) === "debug")
+				? value.server.debug
+				: value.server.docker;
 		}
 	});
 	return configuration as unknown as ClusterConfiguration;
