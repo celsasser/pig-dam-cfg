@@ -4,7 +4,7 @@
  * @license MIT (see project's LICENSE file)
  */
 
-import {Severity} from "pig-dam-core/src/types/index";
+import {Severity} from "pig-dam-core";
 import {
 	MongoServiceConfiguration,
 	SearchServiceConfiguration,

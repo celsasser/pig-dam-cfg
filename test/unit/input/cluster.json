@@ -14,12 +14,12 @@
 		}
 	},
 	"mongo": {
-		"id": "urn:dam:service:mongo",
 		"database": {
 			"urn:db:doc:pig": {
 				"name": "pig-local"
 			}
 		},
+		"id": "urn:dam:service:mongo",
 		"name": "mongo",
 		"server": {
 			"debug": {
