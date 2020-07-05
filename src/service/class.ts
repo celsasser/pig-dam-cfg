@@ -10,7 +10,7 @@ import {ServerConfiguration, ServiceConfiguration} from "../types";
 /**
  * Class instance for any service.
  */
-export class ServiceClass <T extends ServiceConfiguration> {
+export class ServiceClass <T extends ServiceConfiguration = ServiceConfiguration> {
 	public readonly configuration: T;
 	public readonly logger: LogBase;
 
