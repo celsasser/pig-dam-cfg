@@ -3,7 +3,7 @@
  * Time: 12:09 AM
  * @license MIT (see project's LICENSE file)
  */
-import {LogBase, LogConsole} from "pig-dam-core";
+import {ILog, LogConsole} from "pig-dam-core";
 import {getServiceConfiguration} from "./cluster";
 import {getClusterManifest} from "./manifest";
 import {ServiceName} from "./types";
@@ -11,7 +11,7 @@ import {ServiceName} from "./types";
 /**
  * Creates a logger specially designed for YOUR service..
  */
-export function createServiceLogger(service: ServiceName, manifest = getClusterManifest()): LogBase {
+export function createServiceLogger(service: ServiceName, manifest = getClusterManifest()): ILog {
 	const configuration = getServiceConfiguration(service, manifest.cluster);
 	return new LogConsole({
 		applicationId: configuration.id,

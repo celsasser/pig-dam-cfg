@@ -15,8 +15,6 @@ describe("logger", function() {
 				.toEqual(manifest.cluster.factory.id);
 			expect(logger.environmentId)
 				.toEqual(manifest.environment.name);
-			expect(logger.sortMetadata)
-				.toEqual(true);
 			expect(logger.threshold)
 				.toEqual(manifest.settings.log.level);
 		});

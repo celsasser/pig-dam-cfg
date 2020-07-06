@@ -2,7 +2,7 @@
 	"author": "Curt Elsasser",
 	"dependencies": {
 		"lodash": "4.17.15",
-		"pig-dam-core": "0.0.6"
+		"pig-dam-core": "0.0.8"
 	},
 	"description": "Pig DAM's configuration information server",
 	"devDependencies": {

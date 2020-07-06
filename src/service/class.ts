@@ -4,17 +4,17 @@
  * @license MIT (see project's LICENSE file)
  */
 
-import {LogBase} from "pig-dam-core";
+import {ILog} from "pig-dam-core";
 import {ServerConfiguration, ServiceConfiguration} from "../types";
 
 /**
  * Class instance for any service.
  */
 export class ServiceClass <T extends ServiceConfiguration = ServiceConfiguration> {
+	public readonly logger: ILog;
 	public readonly configuration: T;
-	public readonly logger: LogBase;
 
-	constructor(configuration: T, logger: LogBase) {
+	constructor(configuration: T, logger: ILog) {
 		this.configuration = configuration;
 		this.logger = logger;
 	}
